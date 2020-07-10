@@ -19,12 +19,22 @@ url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode
 
 response = br.open(url, timeout=60)
 
+PRINT '*** PAGE 3 ***'
+
 print response.read()
 
 br.select_form(nr=0) # selects first form on the page
+
+br.form.set_all_readonly(False) # allow changing the .value of all controls
+
+br.form['txt_term'] = '202030' # term selection
+
+response = br.submit()
+      
+print '*** PAGE 2 ***
+'        
+print response.read()
         
-for f in br.forms(): # these two lines show the form elements
-	print f
 
 '''
 departments = ['ACCT', 'ACUP', 'AGRI', 'ANTH', 'CMNS', 'APSC', 'ARTH', 'ARTS', 'ASIA', 'ASTR', 'BIOL', 'BIOQ', 'HOPS', 'BUSI', 'BUSM', 'BUQU', 'CHEM', 'CHEQ', 'CADA', 'CADM', 'COMM', 'CBSY', 'CPSC', 'CADD', 'COOP', 'CNPS', 'CRWR', 'CRIM', 'ECON', 'EDAS', 'EDUC', 'ENGL', 'ELST', 'ELSQ', 'ENGQ', 'ENTR', 'ENVI', 'EXCH', 'FASN', 'FMRK', 'FNSR', 'FINA', 'FIND', 'FREN', 'GEOG', 'GNIE', 'GNQU', 'GDMA', 'GRMT', 'HCAP', 'HSCI', 'HEAL', 'HIST', 'HORT', 'HRMT', 'INDG', 'INFO', 'IDEA', 'IDSN', 'IBUS', 'JAPN', 'JRNL', 'LANC', 'LGLA', 'LING', 'MAND', 'MRKT', 'MATQ', 'MATH', 'MAMT', 'MUSI', 'NRSG', 'OSCM', 'PHIL', 'PHYS', 'PHYQ', 'POST', 'POLI', 'DEPD', 'PSYN', 'PSYC', 'PRLN', 'PUNJ', 'WRTG', 'SOCI', 'SPAN', 'DETA', 'TMAS', 'ZZZZ', 'WELD']
