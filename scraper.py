@@ -19,7 +19,7 @@ url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode
 
 response = br.open(url, timeout=60)
 
-PRINT 'PAGE 3'
+print 'PAGE 3'
 
 print response.read()
 
