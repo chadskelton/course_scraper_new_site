@@ -21,9 +21,10 @@ response = br.open(url, timeout=60)
 
 print response.read()
 
-response = br.submit()
+br.select_form(nr=0) # selects first form on the page
         
-print response.read()
+for f in br.forms(): # these two lines show the form elements
+	print f
 
 '''
 departments = ['ACCT', 'ACUP', 'AGRI', 'ANTH', 'CMNS', 'APSC', 'ARTH', 'ARTS', 'ASIA', 'ASTR', 'BIOL', 'BIOQ', 'HOPS', 'BUSI', 'BUSM', 'BUQU', 'CHEM', 'CHEQ', 'CADA', 'CADM', 'COMM', 'CBSY', 'CPSC', 'CADD', 'COOP', 'CNPS', 'CRWR', 'CRIM', 'ECON', 'EDAS', 'EDUC', 'ENGL', 'ELST', 'ELSQ', 'ENGQ', 'ENTR', 'ENVI', 'EXCH', 'FASN', 'FMRK', 'FNSR', 'FINA', 'FIND', 'FREN', 'GEOG', 'GNIE', 'GNQU', 'GDMA', 'GRMT', 'HCAP', 'HSCI', 'HEAL', 'HIST', 'HORT', 'HRMT', 'INDG', 'INFO', 'IDEA', 'IDSN', 'IBUS', 'JAPN', 'JRNL', 'LANC', 'LGLA', 'LING', 'MAND', 'MRKT', 'MATQ', 'MATH', 'MAMT', 'MUSI', 'NRSG', 'OSCM', 'PHIL', 'PHYS', 'PHYQ', 'POST', 'POLI', 'DEPD', 'PSYN', 'PSYC', 'PRLN', 'PUNJ', 'WRTG', 'SOCI', 'SPAN', 'DETA', 'TMAS', 'ZZZZ', 'WELD']
