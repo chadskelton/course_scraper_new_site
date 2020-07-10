@@ -19,7 +19,7 @@ url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode
 
 response = br.open(url, timeout=60)
 
-PRINT '*** PAGE 3 ***'
+PRINT 'PAGE 3'
 
 print response.read()
 
@@ -31,8 +31,8 @@ br.form['txt_term'] = '202030' # term selection
 
 response = br.submit()
       
-print '*** PAGE 2 ***
-'        
+print 'PAGE 2'
+        
 print response.read()
         
 
