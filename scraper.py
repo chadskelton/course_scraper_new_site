@@ -29,6 +29,10 @@ html = s.get(url)
 
 # print soup
 
+url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/classSearch"
+
+html = s.get(url)
+
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term=202030&startDatepicker=&endDatepicker=&uniqueSessionId=1ckwm1594421672965&pageOffset=0&pageMaxSize=10&sortColumn=subjectDescription&sortDirection=asc"
 
 html = s.get(url)
