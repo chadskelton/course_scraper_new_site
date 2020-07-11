@@ -29,7 +29,7 @@ s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", 
 
 s. get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/getTerms?searchTerm=202030&offset=1&max=1", verify=False, headers=browser)
 
-html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload, headers=browser) # trying post
+html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload, allow_redirects=True, headers=browser) # trying post
 
 # htmlpage = html.content
 
