@@ -23,7 +23,7 @@ url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode
 
 payload = {'term': '202030'} # term selection
 
-html = s.get(url, verify=False, data=payload)
+html = s.post(url, verify=False, data=payload) # trying post
 
 htmlpage = html.content
 
