@@ -25,7 +25,7 @@ browser={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 
 s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, headers=browser) # just trying to mimic what browser does
 
-s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False, , headers=browser) # just trying to mimic what browser does
+s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False, headers=browser) # just trying to mimic what browser does
 
 s. get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/getTerms?searchTerm=202030&offset=1&max=1", verify=False, headers=browser)
 
