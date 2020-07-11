@@ -19,15 +19,17 @@ import mechanize
 
 s = requests.Session()
 
-url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search"
-
 payload = {'term': '202030'} # term selection
 
-html = s.get(url, verify=False) # get first
+s.get(url, verify=False) # get first
 
-html = s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False) # just trying to mimic what browser does
+s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False) # just trying to mimic what browser does
 
-html = s.post(url, verify=False, data=payload) # trying post
+s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False) # just trying to mimic what browser does
+
+s. get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/getTerms?searchTerm=202030&offset=1&max=1", verify=False)
+
+html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload) # trying post
 
 htmlpage = html.content
 
