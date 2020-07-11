@@ -27,6 +27,12 @@ html = s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelecti
 
 print BeautifulSoup(html.content)
 
+print ' PAGE 2 '
+
+html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload, allow_redirects=True, headers=browser) # trying post
+
+print BeautifulSoup (html.content)
+
 '''
 
 s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False, headers=browser) # just trying to mimic what browser does
