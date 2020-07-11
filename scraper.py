@@ -21,13 +21,15 @@ s = requests.Session()
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search"
 
-html = s.get(url, verify=False)
+payload = {'term': '202030'} # term selection
 
-# htmlpage = html.content
+html = s.get(url, verify=False, data=payload)
 
-# soup = BeautifulSoup(htmlpage)
+htmlpage = html.content
 
-# print soup
+soup = BeautifulSoup(htmlpage)
+
+print soup
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/classSearch"
 
