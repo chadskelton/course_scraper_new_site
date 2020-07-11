@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 
 # Load in modules
-# !!! NOTE - When doing a more general News Bot, should probably create another field that describes the data
-# (i.e. "New Court Decision") and one that has the email of the person to notify (as this may vary depending
-# on the site scraped. Could then have one script grabbing dozens of different sites and notifying
-# dozens of different reporters/editors !!!
 
 import scraperwiki
 import tweepy
