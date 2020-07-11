@@ -19,7 +19,9 @@ import mechanize
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search"
 
-html = requests.get(url)
+s = requests.Session()
+
+html = s.get(url)
 
 # htmlpage = html.content
 
@@ -29,12 +31,10 @@ html = requests.get(url)
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term=202030&startDatepicker=&endDatepicker=&uniqueSessionId=1ckwm1594421672965&pageOffset=0&pageMaxSize=10&sortColumn=subjectDescription&sortDirection=asc"
 
-html = requests.get(url)
+html = s.get(url)
 
 htmlpage = html.content
 
 soup = BeautifulSoup(htmlpage)
 
 print soup
-
-
