@@ -24,7 +24,7 @@ br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search"
 
 response = br.open(url)
-print response.read()      # the text of the page
+# print response.read()      # the text of the page
 
 #List the forms
 for form in br.forms():
