@@ -21,8 +21,6 @@ s = requests.Session()
 
 payload = {'term': '202030'} # term selection
 
-s.get(url, verify=False) # get first
-
 s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False) # just trying to mimic what browser does
 
 s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False) # just trying to mimic what browser does
