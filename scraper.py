@@ -25,6 +25,8 @@ payload = {'term': '202030'} # term selection
 
 html = s.get(url, verify=False) # get first
 
+html = s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False) # just trying to mimic what browser does
+
 html = s.post(url, verify=False, data=payload) # trying post
 
 htmlpage = html.content
