@@ -29,19 +29,13 @@ s. get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/getTerms?s
 
 html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload) # trying post
 
-htmlpage = html.content
+# htmlpage = html.content
 
-soup = BeautifulSoup(htmlpage)
+# soup = BeautifulSoup(htmlpage)
 
-print soup
+# print soup
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/classSearch"
-
-htmlpage = html.content
-
-soup = BeautifulSoup(htmlpage)
-
-print soup
 
 html = s.get(url, verify=False)
 
