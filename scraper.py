@@ -23,7 +23,11 @@ payload = {'term': '202030'} # term selection
 
 browser={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
 
-s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, headers=browser) # just trying to mimic what browser does
+html = s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, headers=browser) # just trying to mimic what browser does
+
+print html.content
+
+'''
 
 s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False, headers=browser) # just trying to mimic what browser does
 
@@ -37,11 +41,10 @@ html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelect
 
 # print soup
 
-'''
+
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/classSearch"
 
 html = s.get(url, verify=False, headers=browser)
-'''
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term=202030&startDatepicker=&endDatepicker=&uniqueSessionId=1ckwm1594421672965&pageOffset=0&pageMaxSize=10&sortColumn=subjectDescription&sortDirection=asc"
 
@@ -52,3 +55,5 @@ htmlpage = html.content
 soup = BeautifulSoup(htmlpage)
 
 print soup
+
+'''
