@@ -17,49 +17,13 @@ from BeautifulSoup import BeautifulSoup
 import os
 import mechanize
 
-s = requests.Session()
+br = mechanize.Browser()
+br.set_all_readonly(False)    # allow everything to be written to
+br.set_handle_robots(False)   # no robots
+br.set_handle_refresh(False)  # can sometimes hang without this
+br.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
-payload = {'term': '202030'} # term selection
-
-browser={'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
-
-html = s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, headers=browser) # just trying to mimic what browser does
-
-print BeautifulSoup(html.content)
-
-print ' PAGE 2 '
-
-html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload, allow_redirects=True, headers=browser) # trying post
-
-print BeautifulSoup (html.content)
-
-'''
-
-s.get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/selfServiceMenu/data", verify=False, headers=browser) # just trying to mimic what browser does
-
-s. get("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/getTerms?searchTerm=202030&offset=1&max=1", verify=False, headers=browser)
-
-html = s.post("https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search", verify=False, data=payload, allow_redirects=True, headers=browser) # trying post
-
-# htmlpage = html.content
-
-# soup = BeautifulSoup(htmlpage)
-
-# print soup
-
-
-url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/classSearch"
-
-html = s.get(url, verify=False, headers=browser)
-
-url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term=202030&startDatepicker=&endDatepicker=&uniqueSessionId=1ckwm1594421672965&pageOffset=0&pageMaxSize=10&sortColumn=subjectDescription&sortDirection=asc"
-
-html = s.get(url, verify=False, headers=browser)
-
-htmlpage = html.content
-
-soup = BeautifulSoup(htmlpage)
-
-print soup
-
-'''
+#List the forms
+for form in br.forms():
+    print "Form name:", form.name
+    print form
