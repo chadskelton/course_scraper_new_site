@@ -17,9 +17,9 @@ from BeautifulSoup import BeautifulSoup
 import os
 import mechanize
 
-url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search"
-
 s = requests.Session()
+
+url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/term/termSelection?mode=search"
 
 html = s.get(url)
 
