@@ -31,6 +31,12 @@ html = s.get(url, verify=False)
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/classSearch/classSearch"
 
+htmlpage = html.content
+
+soup = BeautifulSoup(htmlpage)
+
+print soup
+
 html = s.get(url, verify=False)
 
 url = "https://banweb3.kpu.ca/StudentRegistrationSsb/ssb/searchResults/searchResults?txt_term=202030&startDatepicker=&endDatepicker=&uniqueSessionId=1ckwm1594421672965&pageOffset=0&pageMaxSize=10&sortColumn=subjectDescription&sortDirection=asc"
